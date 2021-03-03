@@ -1,13 +1,27 @@
 from tkinter import *
 class bill_app():
     def __init__(self, root):
-
         self.root = root
-        self.root.geometry("1300x700")
+        self.root.geometry("5000x5000")
         self.root.title("Billing software")
         bg_colour = "#074463"
-        #=================================
 
+        #===============================initialization of variables=====================
+        #===========bath variables=================
+        self.Bath_001 = IntVar()
+        self.Bath_002 = IntVar()
+        self.Bath_003 = IntVar()
+        self.Bath_004 = IntVar()
+        #===========grocery variables=================
+        self.Bath_005 = IntVar()
+        self.Bath_006 = IntVar()
+        self.Bath_007 = IntVar()
+        self.Bath_008 = IntVar()
+        #===========cold drinks variables=================
+        self.Bath_009 = IntVar()
+        self.Bath_010 = IntVar()
+        self.Bath_011 = IntVar()
+        self.Bath_012 = IntVar()
         #=========================================tille=================================
         title = Label(self.root, text = "Billing software", bg = bg_colour, font = ("times new roman", 30, "bold", "italic"),bd = 12, relief = GROOVE, fg = "black", pady = 2).pack(fill = X)
         #=========================================customer details======================
@@ -30,29 +44,29 @@ class bill_app():
         bill_id_ent = Entry(f1, width = 18, font = ("arial", 15)).grid(row = 0, column = 5)
 
 
-        search_btn = Button(f1, text = "search", width = 15, font = ("times new roman", 12, "bold"), fg = "gold", bg = bg_colour, bd = 6, relief = GROOVE).grid(row = 0, column = 8, padx = 10)
+        search_btn = Button(f1, text = "search", width = 18, font = ("times new roman", 10, "bold"), fg = "gold", bg = bg_colour, bd = 6, relief = GROOVE).grid(row = 0, column = 8, padx = 15, pady = 5)
 
         #===================================product labes====================================
         #===================================bath=============================================
-        f2 = LabelFrame(self.root, text = "bath products", font = ("times new roman", 15, "bold"), fg = "gold", bg = bg_colour, bd = 12, relief = GROOVE)
+        f2 = LabelFrame(self.root, text = "Bath products", font = ("times new roman", 15, "bold"), fg = "gold", bg = bg_colour, bd = 12, relief = GROOVE)
         f2.place(x = 0, y = 165, height = 350, width = 340)
 
-        bath_soap_lbl = Label(f2, text = "Bath soap", font = ("times new roman", 12, "bold"), fg = "gold", bg = bg_colour).grid(row = 0, column = 0, padx = 30, pady = 20)
+        bath_soap_lbl = Label(f2, text = "Bath_001", font = ("times new roman", 12, "bold"), fg = "gold", bg = bg_colour).grid(row = 0, column = 0, padx = 30, pady = 26)
 
         bath_soap_ent = Entry(f2, width = 12, font = ("arial", 15)).grid(row = 0, column = 1)
 
 
-        bath_soap_lbl = Label(f2, text = "Bath soap", font = ("times new roman", 12, "bold"), fg = "gold", bg = bg_colour).grid(row = 1, column = 0, padx = 30, pady = 20)
+        bath_soap_lbl = Label(f2, text = "Bath_001", font = ("times new roman", 12, "bold"), fg = "gold", bg = bg_colour).grid(row = 1, column = 0, padx = 30, pady = 26)
 
         bath_soap_ent = Entry(f2, width = 12, font = ("arial", 15)).grid(row = 1, column = 1)
 
 
-        bath_soap_lbl = Label(f2, text = "Bath soap", font = ("times new roman", 12, "bold"), fg = "gold", bg = bg_colour).grid(row = 2, column = 0, padx = 30, pady = 20)
+        bath_soap_lbl = Label(f2, text = "Bath_003", font = ("times new roman", 12, "bold"), fg = "gold", bg = bg_colour).grid(row = 2, column = 0, padx = 30, pady = 26)
 
         bath_soap_ent = Entry(f2, width = 12, font = ("arial", 15)).grid(row = 2, column = 1)
 
 
-        bath_soap_lbl = Label(f2, text = "Bath soap", font = ("times new roman", 12, "bold"), fg = "gold", bg = bg_colour).grid(row = 3, column = 0, padx = 30, pady = 20)
+        bath_soap_lbl = Label(f2, text = "Bath_004", font = ("times new roman", 12, "bold"), fg = "gold", bg = bg_colour).grid(row = 3, column = 0, padx = 30, pady = 26)
 
         bath_soap_ent = Entry(f2, width = 12, font = ("arial", 15)).grid(row = 3, column = 1)
         #====================================grocery===========================================
@@ -60,22 +74,22 @@ class bill_app():
         f3.place(x = 340, y = 165, height = 350, width = 340)
 
 
-        bath_soap_lbl = Label(f3, text = "Bath soap", font = ("times new roman", 12, "bold"), fg = "gold", bg = bg_colour).grid(row = 0, column = 0, padx = 30, pady = 20)
+        bath_soap_lbl = Label(f3, text = "Bath_005", font = ("times new roman", 12, "bold"), fg = "gold", bg = bg_colour).grid(row = 0, column = 0, padx = 30, pady = 26)
 
         bath_soap_ent = Entry(f3, width = 12, font = ("arial", 15)).grid(row = 0, column = 1)
 
 
-        bath_soap_lbl = Label(f3, text = "Bath soap", font = ("times new roman", 12, "bold"), fg = "gold", bg = bg_colour).grid(row = 1, column = 0, padx = 30, pady = 20)
+        bath_soap_lbl = Label(f3, text = "Bath_006", font = ("times new roman", 12, "bold"), fg = "gold", bg = bg_colour).grid(row = 1, column = 0, padx = 30, pady = 26)
 
         bath_soap_ent = Entry(f3, width = 12, font = ("arial", 15)).grid(row = 1, column = 1)
 
 
-        bath_soap_lbl = Label(f3, text = "Bath soap", font = ("times new roman", 12, "bold"), fg = "gold", bg = bg_colour).grid(row = 2, column = 0, padx = 30, pady = 20)
+        bath_soap_lbl = Label(f3, text = "Bath_007", font = ("times new roman", 12, "bold"), fg = "gold", bg = bg_colour).grid(row = 2, column = 0, padx = 30, pady = 26)
 
         bath_soap_ent = Entry(f3, width = 12, font = ("arial", 15)).grid(row = 2, column = 1)
 
 
-        bath_soap_lbl = Label(f3, text = "Bath soap", font = ("times new roman", 12, "bold"), fg = "gold", bg = bg_colour).grid(row = 3, column = 0, padx = 30, pady = 20)
+        bath_soap_lbl = Label(f3, text = "Bath_008", font = ("times new roman", 12, "bold"), fg = "gold", bg = bg_colour).grid(row = 3, column = 0, padx = 30, pady = 26)
 
         bath_soap_ent = Entry(f3, width = 12, font = ("arial", 15)).grid(row = 3, column = 1)
         #=====================================cold drinks========================================
@@ -83,22 +97,22 @@ class bill_app():
         f4.place(x = 680, y = 165, height = 350, width = 340)
 
 
-        bath_soap_lbl = Label(f4, text = "Bath soap", font = ("times new roman", 12, "bold"), fg = "gold", bg = bg_colour).grid(row = 0, column = 0, padx = 30, pady = 20)
+        bath_soap_lbl = Label(f4, text = "Bath_009", font = ("times new roman", 12, "bold"), fg = "gold", bg = bg_colour).grid(row = 0, column = 0, padx = 30, pady = 26)
 
         bath_soap_ent = Entry(f4, width = 12, font = ("arial", 15)).grid(row = 0, column = 1)
 
 
-        bath_soap_lbl = Label(f4, text = "Bath soap", font = ("times new roman", 12, "bold"), fg = "gold", bg = bg_colour).grid(row = 1, column = 0, padx = 30, pady = 20)
+        bath_soap_lbl = Label(f4, text = "Bath_010", font = ("times new roman", 12, "bold"), fg = "gold", bg = bg_colour).grid(row = 1, column = 0, padx = 30, pady = 26)
 
         bath_soap_ent = Entry(f4, width = 12, font = ("arial", 15)).grid(row = 1, column = 1)
 
 
-        bath_soap_lbl = Label(f4, text = "Bath soap", font = ("times new roman", 12, "bold"), fg = "gold", bg = bg_colour).grid(row = 2, column = 0, padx = 30, pady = 20)
+        bath_soap_lbl = Label(f4, text = "Bath_011", font = ("times new roman", 12, "bold"), fg = "gold", bg = bg_colour).grid(row = 2, column = 0, padx = 30, pady = 26)
 
         bath_soap_ent = Entry(f4, width = 12, font = ("arial", 15)).grid(row = 2, column = 1)
 
 
-        bath_soap_lbl = Label(f4, text = "Bath soap", font = ("times new roman", 12, "bold"), fg = "gold", bg = bg_colour).grid(row = 3, column = 0, padx = 30, pady = 20)
+        bath_soap_lbl = Label(f4, text = "Bath_016", font = ("times new roman", 12, "bold"), fg = "gold", bg = bg_colour).grid(row = 3, column = 0, padx = 30, pady = 26)
 
         bath_soap_ent = Entry(f4, width = 12, font = ("arial", 15)).grid(row = 3, column = 1)
 
@@ -161,8 +175,7 @@ class bill_app():
         clear_btn = Button(f8, text = "Clear", height = 1, width = 7, bd = 12, relief = GROOVE, font = ("times new roman", 18, "bold"), bg = bg_colour).grid(row = 0, column = 2, padx = 8, pady = 10)
 
         exit_btn = Button(f8, text = "Exit", height = 1, width = 7, bd = 12, relief = GROOVE, font = ("times new roman", 18, "bold"), bg = bg_colour).grid(row = 0, column = 3, padx = 8, pady = 10)
-        #===================================back_end======================================================
-        
+
 root = Tk()
 obl = bill_app(root)
 root.mainloop()
