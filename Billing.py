@@ -1,4 +1,6 @@
 from tkinter import *
+import math, random
+from tkinter import messagebox
 class bill_app():
     def __init__(self, root):
         self.root = root
@@ -33,6 +35,8 @@ class bill_app():
         self.c_name = StringVar()
         self.c_phone = StringVar()
         self.bill_no = StringVar()
+        x = random.randint(1000, 9999)
+        self.bill_no.set(str(x))
         self.search_bill = StringVar()
         #=========================================tille=================================
         title = Label(self.root, text = "Billing software", bg = bg_colour, font = ("times new roman", 30, "bold", "italic"),bd = 12, relief = GROOVE, fg = "black", pady = 2).pack(fill = X)
@@ -135,10 +139,10 @@ class bill_app():
 
         bill_label = Label(f6, text = "Bill", bd = 5, relief = GROOVE,fg = "white", bg = bg_colour).pack(fill = X)
         scroll_bar = Scrollbar(f6, orient = VERTICAL)
-        textarea = Text(f6, yscrollcommand = scroll_bar.set)
+        self.txtarea = Text(f6, yscrollcommand = scroll_bar.set)
         scroll_bar.pack(fill = Y, side = RIGHT)
-        scroll_bar.config(command = textarea.yview)
-        textarea.pack(fill = BOTH)
+        scroll_bar.config(command = self.txtarea.yview)
+        self.txtarea.pack(fill = BOTH)
 
         #=======================billing menu===============================
         f7 = LabelFrame(self.root, text = "Billing menu", font = ("times new roman", 18, "bold"), bg = bg_colour, fg = "gold", bd = 12, relief = GROOVE)
@@ -161,17 +165,17 @@ class bill_app():
 
         #============================tax==========================================
 
-        total_cosmetic_price_lbl = Label(f7, text = "Total cosmetic price", fg =  "gold", bg = bg_colour, font = ("times new roman", 15, "bold")).grid(row = 0, column = 2, padx = 20, pady = 13)
+        total_cosmetic_price_lbl = Label(f7, text = "Total cosmetic tax", fg =  "gold", bg = bg_colour, font = ("times new roman", 15, "bold")).grid(row = 0, column = 2, padx = 20, pady = 13)
 
         total_cosmetic_price_ent = Entry(f7, textvariable = self.total_cosmetic_tax,width = 10, font = ("time new roman", 10, "bold")).grid(row = 0, column = 3)
 
 
-        total_grocery_price_lbl = Label(f7, text = "Total grocery price", fg =  "gold", bg = bg_colour, font = ("times new roman", 15, "bold")).grid(row = 1, column = 2, padx = 20, pady = 13)
+        total_grocery_price_lbl = Label(f7, text = "Total grocery tax", fg =  "gold", bg = bg_colour, font = ("times new roman", 15, "bold")).grid(row = 1, column = 2, padx = 20, pady = 13)
 
         total_grocery_price_ent = Entry(f7, textvariable = self.total_grocery_tax,width = 10, font = ("time new roman", 10, "bold")).grid(row = 1, column = 3)
 
 
-        total_cold_drink_price_lbl = Label(f7, text = "Total cold drink price", fg =  "gold", bg = bg_colour, font = ("times new roman", 15, "bold")).grid(row = 2, column = 2, padx = 20, pady = 13)
+        total_cold_drink_price_lbl = Label(f7, text = "Total cold drink tax", fg =  "gold", bg = bg_colour, font = ("times new roman", 15, "bold")).grid(row = 2, column = 2, padx = 20, pady = 13)
 
         total_cold_drink_price_ent = Entry(f7, textvariable = self.total_cold_drink_tax,width = 10, font = ("time new roman", 10, "bold")).grid(row = 2, column = 3)
 
@@ -182,37 +186,117 @@ class bill_app():
 
         total_btn = Button(f8, command = self.total, text = "Total", height = 1, width = 7, bd = 12, relief = GROOVE, font = ("times new roman", 18, "bold"), bg = bg_colour).grid(row = 0, column = 0, padx = 8, pady = 10)
 
-        generate_bill_btn = Button(f8, text = "Generate bill", height = 1, width = 10, bd = 12, relief = GROOVE, font = ("times new roman", 18, "bold"), bg = bg_colour).grid(row = 0, column = 1, padx = 8, pady = 10)
+        generate_bill_btn = Button(f8, command = self.bill_area,text = "Generate bill", height = 1, width = 10, bd = 12, relief = GROOVE, font = ("times new roman", 18, "bold"), bg = bg_colour).grid(row = 0, column = 1, padx = 8, pady = 10)
 
         clear_btn = Button(f8, text = "Clear", height = 1, width = 7, bd = 12, relief = GROOVE, font = ("times new roman", 18, "bold"), bg = bg_colour).grid(row = 0, column = 2, padx = 8, pady = 10)
 
         exit_btn = Button(f8, text = "Exit", height = 1, width = 7, bd = 12, relief = GROOVE, font = ("times new roman", 18, "bold"), bg = bg_colour).grid(row = 0, column = 3, padx = 8, pady = 10)
 
+        #=====================
+        self.welcome_bill()
+        #=====================
     #===================================total calculation========================
     def total(self):
-        total_cosmetic = str(
+        self.total_cosmetic = str(
                 self.cosmetic_001.get()*10+
                 self.cosmetic_002.get()*10+
                 self.cosmetic_003.get()*10+
                 self.cosmetic_004.get()*10 )
-        self.total_cosmetic_price.set(total_cosmetic+" Rs.")
-        self.total_cosmetic_tax.set(str(round(float(total_cosmetic)*0.22, 2))+" Rs.")
+        self.total_cosmetic_price.set(" Rs."+self.total_cosmetic)
+        self.cosmetic_tax = round(float(self.total_cosmetic)*0.22, 2)
+        self.total_cosmetic_tax.set(" Rs."+str(self.cosmetic_tax))
 
-        total_grocery = str(
+        self.total_grocery = str(
                 self.grocery_001.get()*10+
                 self.grocery_002.get()*10+
                 self.grocery_003.get()*10+
                 self.grocery_004.get()*10 )
-        self.total_grocery_price.set(total_grocery+" Rs.")
-        self.total_grocery_tax.set(str(round(0.18*float(total_grocery), 2))+" Rs.")
+        self.total_grocery_price.set(" Rs."+self.total_grocery)
+        self.grocery_tax = round(0.18*float(self.total_grocery), 2)
+        self.total_grocery_tax.set(" Rs."+str(self.grocery_tax))
 
-        total_cold_drink = str(
+        self.total_cold_drink = str(
                 self.cold_drinks_001.get()*10+
                 self.cold_drinks_002.get()*10+
                 self.cold_drinks_003.get()*10+
                 self.cold_drinks_004.get()*10 )
-        self.total_cold_drink_price.set(total_cold_drink+" Rs.")
-        self.total_cold_drink_tax.set(str(round(float(total_cold_drink)*0.22, 2))+" Rs.")
+        self.total_cold_drink_price.set(" Rs."+self.total_cold_drink)
+        self.cold_drinks_tax = round(float(self.total_cold_drink)*0.22, 2)
+        self.total_cold_drink_tax.set(" Rs."+str(self.cold_drinks_tax))
+            
+    def welcome_bill(self):
+            self.txtarea.delete("1.0", END)
+            self.txtarea.insert(END, "\t\twelcome\n")
+            self.txtarea.insert(END, f"Bill No.      :{self.bill_no.get()}\n")
+            self.txtarea.insert(END, f"customer Name :{self.c_name.get()}\n")
+            self.txtarea.insert(END, f"Phone No.     :{self.c_phone.get()}\n")
+            self.txtarea.insert(END, "=====================================")
+            self.txtarea.insert(END, "products\t\tQnt\t\tprice\n")
+            self.txtarea.insert(END, "=====================================")
+    
+    def bill_area(self):
+            if self.c_name.get() ==  "" or self.c_phone.get() == "":
+                    messagebox.showerror("Error", "customer details are must")
+            else:
+                self.welcome_bill()
+                #===========cosmetic==================
+                if self.cosmetic_001.get() or self.cosmetic_002.get() or self.cosmetic_003.get() or self.cosmetic_004.get():
+                        self.txtarea.insert(END, f"\n")
+                if self.cosmetic_001.get() != 0:
+                        self.txtarea.insert(END, f"cosmetic_001\t\t{self.cosmetic_001.get()}\t\t{self.cosmetic_001.get()*10}\n")
+                if self.cosmetic_002.get() != 0:
+                        self.txtarea.insert(END, f"cosmetic_002\t\t{self.cosmetic_002.get()}\t\t{self.cosmetic_002.get()*10}\n")
+                if self.cosmetic_003.get() != 0:
+                        self.txtarea.insert(END, f"cosmetic_003\t\t{self.cosmetic_003.get()}\t\t{self.cosmetic_003.get()*10}\n")
+                if self.cosmetic_004.get() != 0:
+                        self.txtarea.insert(END, f"cosmetic_004\t\t{self.cosmetic_004.get()}\t\t{self.cosmetic_004.get()*10}\n")
+                
+                #==========grocery==================
+                if self.grocery_001.get() or self.grocery_002.get() or self.grocery_003.get() or self.grocery_004.get():
+                        self.txtarea.insert(END, f"\n")
+                if self.grocery_001.get() != 0:
+                        self.txtarea.insert(END, f"grocery_001\t\t{self.grocery_001.get()}\t\t{self.grocery_001.get()*10}\n")
+                if self.grocery_002.get() != 0:
+                        self.txtarea.insert(END, f"grocery_002\t\t{self.grocery_002.get()}\t\t{self.grocery_002.get()*10}\n")
+                if self.grocery_003.get() != 0:
+                        self.txtarea.insert(END, f"grocery_003\t\t{self.grocery_003.get()}\t\t{self.grocery_003.get()*10}\n")
+                if self.grocery_004.get() != 0:
+                        self.txtarea.insert(END, f"grocery_004\t\t{self.grocery_004.get()}\t\t{self.grocery_004.get()*10}\n")
+
+                #===========cold_drinks==================
+                if self.cold_drinks_001.get() or self.cold_drinks_002.get() or self.cold_drinks_003.get() or self.cold_drinks_004.get():
+                        self.txtarea.insert(END, f"\n")
+                if self.cold_drinks_001.get() != 0:
+                        self.txtarea.insert(END, f"cold drinks_001\t\t{self.cold_drinks_001.get()}\t\t{self.cold_drinks_001.get()*10}\n")
+                if self.cold_drinks_002.get() != 0:
+                        self.txtarea.insert(END, f"cold drinks_002\t\t{self.cold_drinks_002.get()}\t\t{self.cold_drinks_002.get()*10}\n")
+                if self.cold_drinks_003.get() != 0:
+                        self.txtarea.insert(END, f"cold drinks_003\t\t{self.cold_drinks_003.get()}\t\t{self.cold_drinks_003.get()*10}\n")
+                if self.cold_drinks_004.get() != 0:
+                        self.txtarea.insert(END, f"cold drinks_004\t\t{self.cold_drinks_004.get()}\t\t{self.cold_drinks_004.get()*10}\n")
+
+                if self.total_cosmetic_tax.get() != "" and self.total_cosmetic_tax.get() != " Rs.0.0":
+                        self.txtarea.insert(END, "=====================================\n")
+                        self.txtarea.insert(END, f"Total cosmetic Tax\t\t\t{self.total_cosmetic_tax.get()}\n")
+
+                if self.total_grocery_tax.get() != "" and self.total_grocery_tax.get() != " Rs.0.0":
+                        self.txtarea.insert(END, "-------------------------------------\n")
+                        self.txtarea.insert(END, f"Total grocery Tax\t\t\t{self.total_grocery_tax.get()}\n")
+
+                if self.total_cold_drink_tax.get() != "" and self.total_cold_drink_tax.get() != " Rs.0.0":
+                        self.txtarea.insert(END, "-------------------------------------\n")
+                        self.txtarea.insert(END, f"Total cold drinks Tax\t\t\t{self.total_cold_drink_tax.get()}\n")
+                self.txtarea.insert(END, "=====================================\n")
+
+                self.Total_Bill =round(float( float(self.total_cosmetic) +
+                                        float(self.total_cosmetic) +
+                                        float(self.total_cosmetic) +
+                                        float(self.cosmetic_tax) +
+                                        float(self.grocery_tax) +
+                                        float(self.cold_drinks_tax) ), 2)
+
+                
+                self.txtarea.insert(END, f"Total Bill\t\t\t Rs. {self.Total_Bill}")                         
 
 
 root = Tk()
