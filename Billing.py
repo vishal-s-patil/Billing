@@ -8,20 +8,32 @@ class bill_app():
 
         #===============================initialization of variables=====================
         #===========bath variables=================
-        self.Bath_001 = IntVar()
-        self.Bath_002 = IntVar()
-        self.Bath_003 = IntVar()
-        self.Bath_004 = IntVar()
+        self.cosmetic_001 = IntVar()
+        self.cosmetic_002 = IntVar()
+        self.cosmetic_003 = IntVar()
+        self.cosmetic_004 = IntVar()
         #===========grocery variables=================
-        self.Bath_005 = IntVar()
-        self.Bath_006 = IntVar()
-        self.Bath_007 = IntVar()
-        self.Bath_008 = IntVar()
+        self.grocery_001 = IntVar()
+        self.grocery_002 = IntVar()
+        self.grocery_003 = IntVar()
+        self.grocery_004 = IntVar()
         #===========cold drinks variables=================
-        self.Bath_009 = IntVar()
-        self.Bath_010 = IntVar()
-        self.Bath_011 = IntVar()
-        self.Bath_012 = IntVar()
+        self.cold_drinks_001 = IntVar()
+        self.cold_drinks_002 = IntVar()
+        self.cold_drinks_003 = IntVar()
+        self.cold_drinks_004 = IntVar()
+        #===========Bill menu vriables=====================
+        self.total_cosmetic_price = StringVar()
+        self.total_cosmetic_price = StringVar()
+        self.total_cosmetic_price = StringVar()
+        self.total_cosmetic_tax = StringVar()
+        self.total_cosmetic_tax = StringVar()
+        self.total_cosmetic_tax = StringVar()
+        #===============customer details variables===========
+        self.c_name = StringVar()
+        self.c_phone = StringVar()
+        self.bill_no = StringVar()
+        self.search_bill = StringVar()
         #=========================================tille=================================
         title = Label(self.root, text = "Billing software", bg = bg_colour, font = ("times new roman", 30, "bold", "italic"),bd = 12, relief = GROOVE, fg = "black", pady = 2).pack(fill = X)
         #=========================================customer details======================
@@ -48,73 +60,73 @@ class bill_app():
 
         #===================================product labes====================================
         #===================================bath=============================================
-        f2 = LabelFrame(self.root, text = "Bath products", font = ("times new roman", 15, "bold"), fg = "gold", bg = bg_colour, bd = 12, relief = GROOVE)
+        f2 = LabelFrame(self.root, text = "Cosmetic", font = ("times new roman", 15, "bold"), fg = "gold", bg = bg_colour, bd = 12, relief = GROOVE)
         f2.place(x = 0, y = 165, height = 350, width = 340)
 
-        bath_soap_lbl = Label(f2, text = "Bath_001", font = ("times new roman", 12, "bold"), fg = "gold", bg = bg_colour).grid(row = 0, column = 0, padx = 30, pady = 26)
+        cosmetic_001_lbl = Label(f2, text = "cosmetic_001", font = ("times new roman", 12, "bold"), fg = "gold", bg = bg_colour).grid(row = 0, column = 0, padx = 30, pady = 26)
 
-        bath_soap_ent = Entry(f2, width = 12, font = ("arial", 15)).grid(row = 0, column = 1)
-
-
-        bath_soap_lbl = Label(f2, text = "Bath_001", font = ("times new roman", 12, "bold"), fg = "gold", bg = bg_colour).grid(row = 1, column = 0, padx = 30, pady = 26)
-
-        bath_soap_ent = Entry(f2, width = 12, font = ("arial", 15)).grid(row = 1, column = 1)
+        cosmetic_001_ent = Entry(f2, width = 12, font = ("arial", 15)).grid(row = 0, column = 1)
 
 
-        bath_soap_lbl = Label(f2, text = "Bath_003", font = ("times new roman", 12, "bold"), fg = "gold", bg = bg_colour).grid(row = 2, column = 0, padx = 30, pady = 26)
+        cosmetic_002_lbl = Label(f2, text = "cosmetic_002", font = ("times new roman", 12, "bold"), fg = "gold", bg = bg_colour).grid(row = 1, column = 0, padx = 30, pady = 26)
 
-        bath_soap_ent = Entry(f2, width = 12, font = ("arial", 15)).grid(row = 2, column = 1)
+        cosmetic_002_ent = Entry(f2, width = 12, font = ("arial", 15)).grid(row = 1, column = 1)
 
 
-        bath_soap_lbl = Label(f2, text = "Bath_004", font = ("times new roman", 12, "bold"), fg = "gold", bg = bg_colour).grid(row = 3, column = 0, padx = 30, pady = 26)
+        cosmetic_003_lbl = Label(f2, text = "cosmetic_003", font = ("times new roman", 12, "bold"), fg = "gold", bg = bg_colour).grid(row = 2, column = 0, padx = 30, pady = 26)
 
-        bath_soap_ent = Entry(f2, width = 12, font = ("arial", 15)).grid(row = 3, column = 1)
+        cosmetic_003_ent = Entry(f2, width = 12, font = ("arial", 15)).grid(row = 2, column = 1)
+
+
+        cosmetic_004_lbl = Label(f2, text = "cosmetic_004", font = ("times new roman", 12, "bold"), fg = "gold", bg = bg_colour).grid(row = 3, column = 0, padx = 30, pady = 26)
+
+        cosmetic_004_ent = Entry(f2, width = 12, font = ("arial", 15)).grid(row = 3, column = 1)
         #====================================grocery===========================================
-        f3 = LabelFrame(self.root, text = "grocery", font = ("times new roman", 15, "bold"), fg = "gold", bg = bg_colour, bd = 12, relief = GROOVE)
+        f3 = LabelFrame(self.root, text = "Grocery", font = ("times new roman", 15, "bold"), fg = "gold", bg = bg_colour, bd = 12, relief = GROOVE)
         f3.place(x = 340, y = 165, height = 350, width = 340)
 
 
-        bath_soap_lbl = Label(f3, text = "Bath_005", font = ("times new roman", 12, "bold"), fg = "gold", bg = bg_colour).grid(row = 0, column = 0, padx = 30, pady = 26)
+        grocery_001_lbl = Label(f3, text = "grocery_001", font = ("times new roman", 12, "bold"), fg = "gold", bg = bg_colour).grid(row = 0, column = 0, padx = 30, pady = 26)
 
-        bath_soap_ent = Entry(f3, width = 12, font = ("arial", 15)).grid(row = 0, column = 1)
-
-
-        bath_soap_lbl = Label(f3, text = "Bath_006", font = ("times new roman", 12, "bold"), fg = "gold", bg = bg_colour).grid(row = 1, column = 0, padx = 30, pady = 26)
-
-        bath_soap_ent = Entry(f3, width = 12, font = ("arial", 15)).grid(row = 1, column = 1)
+        grocery_001_ent = Entry(f3, width = 12, font = ("arial", 15)).grid(row = 0, column = 1)
 
 
-        bath_soap_lbl = Label(f3, text = "Bath_007", font = ("times new roman", 12, "bold"), fg = "gold", bg = bg_colour).grid(row = 2, column = 0, padx = 30, pady = 26)
+        grocery_002_lbl = Label(f3, text = "grocery_002", font = ("times new roman", 12, "bold"), fg = "gold", bg = bg_colour).grid(row = 1, column = 0, padx = 30, pady = 26)
 
-        bath_soap_ent = Entry(f3, width = 12, font = ("arial", 15)).grid(row = 2, column = 1)
+        grocery_002_ent = Entry(f3, width = 12, font = ("arial", 15)).grid(row = 1, column = 1)
 
 
-        bath_soap_lbl = Label(f3, text = "Bath_008", font = ("times new roman", 12, "bold"), fg = "gold", bg = bg_colour).grid(row = 3, column = 0, padx = 30, pady = 26)
+        grocery_003_lbl = Label(f3, text = "grocery_003", font = ("times new roman", 12, "bold"), fg = "gold", bg = bg_colour).grid(row = 2, column = 0, padx = 30, pady = 26)
 
-        bath_soap_ent = Entry(f3, width = 12, font = ("arial", 15)).grid(row = 3, column = 1)
+        grocery_003_ent = Entry(f3, width = 12, font = ("arial", 15)).grid(row = 2, column = 1)
+
+
+        grocery_004_lbl = Label(f3, text = "grocery_004", font = ("times new roman", 12, "bold"), fg = "gold", bg = bg_colour).grid(row = 3, column = 0, padx = 30, pady = 26)
+
+        grocery_004_ent = Entry(f3, width = 12, font = ("arial", 15)).grid(row = 3, column = 1)
         #=====================================cold drinks========================================
-        f4 = LabelFrame(self.root, text = "cold drinks", font = ("times new roman", 15, "bold"), fg = "gold", bg = bg_colour, bd = 12, relief = GROOVE)
+        f4 = LabelFrame(self.root, text = "Cold drinks", font = ("times new roman", 15, "bold"), fg = "gold", bg = bg_colour, bd = 12, relief = GROOVE)
         f4.place(x = 680, y = 165, height = 350, width = 340)
 
 
-        bath_soap_lbl = Label(f4, text = "Bath_009", font = ("times new roman", 12, "bold"), fg = "gold", bg = bg_colour).grid(row = 0, column = 0, padx = 30, pady = 26)
+        cold_drinks_001_lbl = Label(f4, text = "cold_drinks_001", font = ("times new roman", 12, "bold"), fg = "gold", bg = bg_colour).grid(row = 0, column = 0, padx = 30, pady = 26)
 
-        bath_soap_ent = Entry(f4, width = 12, font = ("arial", 15)).grid(row = 0, column = 1)
-
-
-        bath_soap_lbl = Label(f4, text = "Bath_010", font = ("times new roman", 12, "bold"), fg = "gold", bg = bg_colour).grid(row = 1, column = 0, padx = 30, pady = 26)
-
-        bath_soap_ent = Entry(f4, width = 12, font = ("arial", 15)).grid(row = 1, column = 1)
+        cold_drinks_001_ent = Entry(f4, width = 12, font = ("arial", 15)).grid(row = 0, column = 1)
 
 
-        bath_soap_lbl = Label(f4, text = "Bath_011", font = ("times new roman", 12, "bold"), fg = "gold", bg = bg_colour).grid(row = 2, column = 0, padx = 30, pady = 26)
+        cold_drinks_002_lbl = Label(f4, text = "cold_drinks_002", font = ("times new roman", 12, "bold"), fg = "gold", bg = bg_colour).grid(row = 1, column = 0, padx = 30, pady = 26)
 
-        bath_soap_ent = Entry(f4, width = 12, font = ("arial", 15)).grid(row = 2, column = 1)
+        cold_drinks_002_ent = Entry(f4, width = 12, font = ("arial", 15)).grid(row = 1, column = 1)
 
 
-        bath_soap_lbl = Label(f4, text = "Bath_016", font = ("times new roman", 12, "bold"), fg = "gold", bg = bg_colour).grid(row = 3, column = 0, padx = 30, pady = 26)
+        cold_drinks_003_lbl = Label(f4, text = "cold_drinks_004", font = ("times new roman", 12, "bold"), fg = "gold", bg = bg_colour).grid(row = 2, column = 0, padx = 30, pady = 26)
 
-        bath_soap_ent = Entry(f4, width = 12, font = ("arial", 15)).grid(row = 3, column = 1)
+        cold_drinks_003_ent = Entry(f4, width = 12, font = ("arial", 15)).grid(row = 2, column = 1)
+
+
+        cold_drinks_004_lbl = Label(f4, text = "cold_drinks_004", font = ("times new roman", 12, "bold"), fg = "gold", bg = bg_colour).grid(row = 3, column = 0, padx = 30, pady = 26)
+
+        cold_drinks_004_ent = Entry(f4, width = 12, font = ("arial", 15)).grid(row = 3, column = 1)
 
         #===================bill area=====================================
 
