@@ -188,28 +188,31 @@ class bill_app():
 
         exit_btn = Button(f8, text = "Exit", height = 1, width = 7, bd = 12, relief = GROOVE, font = ("times new roman", 18, "bold"), bg = bg_colour).grid(row = 0, column = 3, padx = 8, pady = 10)
 
-
+    #===================================total calculation========================
     def total(self):
         total_cosmetic = str(
                 self.cosmetic_001.get()*10+
                 self.cosmetic_002.get()*10+
                 self.cosmetic_003.get()*10+
                 self.cosmetic_004.get()*10 )
-        self.total_cosmetic_price.set(total_cosmetic)
+        self.total_cosmetic_price.set(total_cosmetic+" Rs.")
+        self.total_cosmetic_tax.set(str(round(float(total_cosmetic)*0.22, 2))+" Rs.")
 
         total_grocery = str(
                 self.grocery_001.get()*10+
                 self.grocery_002.get()*10+
                 self.grocery_003.get()*10+
                 self.grocery_004.get()*10 )
-        self.total_grocery_price.set(total_grocery)
+        self.total_grocery_price.set(total_grocery+" Rs.")
+        self.total_grocery_tax.set(str(round(0.18*float(total_grocery), 2))+" Rs.")
 
         total_cold_drink = str(
                 self.cold_drinks_001.get()*10+
                 self.cold_drinks_002.get()*10+
                 self.cold_drinks_003.get()*10+
                 self.cold_drinks_004.get()*10 )
-        self.total_cold_drink_price.set(total_cold_drink)
+        self.total_cold_drink_price.set(total_cold_drink+" Rs.")
+        self.total_cold_drink_tax.set(str(round(float(total_cold_drink)*0.22, 2))+" Rs.")
 
 
 root = Tk()
