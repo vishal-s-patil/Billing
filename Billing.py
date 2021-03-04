@@ -34,9 +34,9 @@ class bill_app():
         #===============customer details variables===========
         self.c_name = StringVar()
         self.c_phone = StringVar()
-        self.bill_no = IntVar()
+        self.bill_no = StringVar()
         x = random.randint(1000, 9999)
-        self.bill_no.set(x)
+        self.bill_no.set(str(x))
         self.search_bill = StringVar()
         #=========================================tille=================================
         title = Label(self.root, text = "Billing software", bg = bg_colour, font = ("times new roman", 30, "bold", "italic"),bd = 12, relief = GROOVE, fg = "black", pady = 2).pack(fill = X)
@@ -188,9 +188,9 @@ class bill_app():
 
         generate_bill_btn = Button(f8, command = self.bill_area,text = "Generate bill", height = 1, width = 10, bd = 12, relief = GROOVE, font = ("times new roman", 18, "bold"), bg = bg_colour).grid(row = 0, column = 1, padx = 8, pady = 10)
 
-        clear_btn = Button(f8, text = "Clear", height = 1, width = 7, bd = 12, relief = GROOVE, font = ("times new roman", 18, "bold"), bg = bg_colour).grid(row = 0, column = 2, padx = 8, pady = 10)
+        clear_btn = Button(f8, command = self.clear, text = "Clear", height = 1, width = 7, bd = 12, relief = GROOVE, font = ("times new roman", 18, "bold"), bg = bg_colour).grid(row = 0, column = 2, padx = 8, pady = 10)
 
-        exit_btn = Button(f8, text = "Exit", height = 1, width = 7, bd = 12, relief = GROOVE, font = ("times new roman", 18, "bold"), bg = bg_colour).grid(row = 0, column = 3, padx = 8, pady = 10)
+        exit_btn = Button(f8, command = self.exit, text = "Exit", height = 1, width = 7, bd = 12, relief = GROOVE, font = ("times new roman", 18, "bold"), bg = bg_colour).grid(row = 0, column = 3, padx = 8, pady = 10)
 
         #=====================
         self.welcome_bill()
@@ -324,6 +324,49 @@ class bill_app():
                         present = 1
             if not(present):
                     messagebox.showerror("Error", "Bill not found")
+
+    def clear(self):
+        op = messagebox.askyesno("Clear", "Sure u want to clear")
+        if op>0:
+                self.cosmetic_001.set(0)
+                self.cosmetic_002.set(0)
+                self.cosmetic_003.set(0)
+                self.cosmetic_004.set(0)
+                #===========grocery variables=================
+                self.grocery_001.set(0)
+                self.grocery_002.set(0)
+                self.grocery_003.set(0)
+                self.grocery_004.set(0)
+                #===========cold drinks variables=================
+                self.cold_drinks_001.set(0)
+                self.cold_drinks_002.set(0)
+                self.cold_drinks_003.set(0)
+                self.cold_drinks_004.set(0)
+                #===========Bill menu vriables=====================
+                self.total_cosmetic_price.set("")
+                self.total_grocery_price.set("")
+                self.total_cold_drink_price.set("")
+                self.total_cosmetic_tax.set("")
+                self.total_grocery_tax.set("")
+                self.total_cold_drink_tax.set("")
+                #===============customer details variables===========
+                self.c_name.set("")
+                self.c_phone.set("")
+                self.bill_no.set("")
+                x = random.randint(1000, 9999)
+                self.bill_no.set(str(x))
+                self.search_bill.set("")
+
+                self.welcome_bill()
+        else:
+                return
+
+    def exit(self):
+        op = messagebox.askyesno("Exit", "Sure u want to exit")
+        if op>0:
+                self.root.destroy()
+
+
 
 root = Tk()
 obl = bill_app(root)

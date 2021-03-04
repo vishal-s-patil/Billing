@@ -1,0 +1,22 @@
+		welcome
+Bill No.      :4252
+customer Name :nskabs
+Phone No.     :kdksjs
+=====================================products		Qnt		price
+=====================================
+cosmetic_001		2		20
+cosmetic_003		5		50
+
+grocery_001		8		80
+grocery_004		7		70
+
+cold drinks_001		4		40
+cold drinks_003		1		10
+=====================================
+Total cosmetic Tax			 Rs.15.4
+-------------------------------------
+Total grocery Tax			 Rs.27.0
+-------------------------------------
+Total cold drinks Tax			 Rs.11.0
+=====================================
+Total Bill			 Rs. 263.4

@@ -1,0 +1,22 @@
+		welcome
+Bill No.      :5888
+customer Name :ndndd
+Phone No.     :snnss
+=====================================products		Qnt		price
+=====================================
+cosmetic_003		2		20
+cosmetic_004		5		50
+
+grocery_002		4		40
+grocery_003		4		40
+grocery_004		5		50
+
+cold drinks_003		5		50
+=====================================
+Total cosmetic Tax			 Rs.15.4
+-------------------------------------
+Total grocery Tax			 Rs.23.4
+-------------------------------------
+Total cold drinks Tax			 Rs.11.0
+=====================================
+Total Bill			 Rs. 259.8

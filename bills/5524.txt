@@ -1,0 +1,21 @@
+		welcome
+Bill No.      :5524
+customer Name :nxnx
+Phone No.     :xnxx
+=====================================products		Qnt		price
+=====================================
+cosmetic_002		2		20
+
+grocery_001		5		50
+grocery_003		8		80
+
+cold drinks_002		9		90
+cold drinks_004		6		60
+=====================================
+Total cosmetic Tax			 Rs.4.4
+-------------------------------------
+Total grocery Tax			 Rs.23.4
+-------------------------------------
+Total cold drinks Tax			 Rs.33.0
+=====================================
+Total Bill			 Rs. 120.8
