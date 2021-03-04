@@ -1,5 +1,5 @@
 from tkinter import *
-import math, random
+import math, random, os
 from tkinter import messagebox
 class bill_app():
     def __init__(self, root):
@@ -34,9 +34,9 @@ class bill_app():
         #===============customer details variables===========
         self.c_name = StringVar()
         self.c_phone = StringVar()
-        self.bill_no = StringVar()
+        self.bill_no = IntVar()
         x = random.randint(1000, 9999)
-        self.bill_no.set(str(x))
+        self.bill_no.set(x)
         self.search_bill = StringVar()
         #=========================================tille=================================
         title = Label(self.root, text = "Billing software", bg = bg_colour, font = ("times new roman", 30, "bold", "italic"),bd = 12, relief = GROOVE, fg = "black", pady = 2).pack(fill = X)
@@ -294,9 +294,23 @@ class bill_app():
                                         float(self.cosmetic_tax) +
                                         float(self.grocery_tax) +
                                         float(self.cold_drinks_tax) ), 2)
-
                 
-                self.txtarea.insert(END, f"Total Bill\t\t\t Rs. {self.Total_Bill}")                         
+                
+                self.txtarea.insert(END, f"Total Bill\t\t\t Rs. {self.Total_Bill}") 
+
+                self.save_bill()
+
+
+    def save_bill(self):
+            op = messagebox.askyesno("save bill", "Do u want to save bill")
+            if op>0:
+                self.bill_data = self.txtarea.get("1.0", END)
+                f = open("bills/"+str(self.bill_no.get())+".txt", "w")
+                f.write(self.bill_data)
+                f.close()  
+                messagebox.showinfo("saved", f"Bill no. :{self.bill_no.get()} saved successfully") 
+            else:
+                    return                         
 
 
 root = Tk()
