@@ -24,11 +24,11 @@ class bill_app():
         self.cold_drinks_004 = IntVar()
         #===========Bill menu vriables=====================
         self.total_cosmetic_price = StringVar()
-        self.total_cosmetic_price = StringVar()
-        self.total_cosmetic_price = StringVar()
+        self.total_grocery_price = StringVar()
+        self.total_cold_drink_price = StringVar()
         self.total_cosmetic_tax = StringVar()
-        self.total_cosmetic_tax = StringVar()
-        self.total_cosmetic_tax = StringVar()
+        self.total_grocery_tax = StringVar()
+        self.total_cold_drink_tax = StringVar()
         #===============customer details variables===========
         self.c_name = StringVar()
         self.c_phone = StringVar()
@@ -43,17 +43,17 @@ class bill_app():
 
         c_name_lbl = Label(f1, text = "customer name", fg = "gold", bg = bg_colour, font = ("times new roman", 18, "bold"), padx = 15, pady = 2).grid(row = 0, column = 0)
         
-        c_name_ent = Entry(f1, width = 18, font = ("arial", 15)).grid(row = 0, column = 1)
+        c_name_ent = Entry(f1, textvariable = self.c_name,width = 18, font = ("arial", 15)).grid(row = 0, column = 1)
 
 
         c_phone_lbl = Label(f1, text = "Phone NO.", fg = "gold", bg = bg_colour, font = ("times new roman", 18, "bold"), padx = 15, pady = 2).grid(row = 0, column = 2)
 
-        c_Phone_ent = Entry(f1, width = 18, font = ("arial", 15)).grid(row = 0, column = 3)
+        c_Phone_ent = Entry(f1, textvariable = self.c_phone,width = 18, font = ("arial", 15)).grid(row = 0, column = 3)
 
 
         bill_id_lbl = Label(f1, text = "Bill id", fg = "gold", bg = bg_colour, font = ("times new roman", 18, "bold"), padx = 15, pady = 2).grid(row = 0, column = 4)
 
-        bill_id_ent = Entry(f1, width = 18, font = ("arial", 15)).grid(row = 0, column = 5)
+        bill_id_ent = Entry(f1, textvariable = self.search_bill,width = 18, font = ("arial", 15)).grid(row = 0, column = 5)
 
 
         search_btn = Button(f1, text = "search", width = 18, font = ("times new roman", 10, "bold"), fg = "gold", bg = bg_colour, bd = 6, relief = GROOVE).grid(row = 0, column = 8, padx = 15, pady = 5)
@@ -65,22 +65,22 @@ class bill_app():
 
         cosmetic_001_lbl = Label(f2, text = "cosmetic_001", font = ("times new roman", 12, "bold"), fg = "gold", bg = bg_colour).grid(row = 0, column = 0, padx = 30, pady = 26)
 
-        cosmetic_001_ent = Entry(f2, width = 12, font = ("arial", 15)).grid(row = 0, column = 1)
+        cosmetic_001_ent = Entry(f2, textvariable = self.cosmetic_001,width = 12, font = ("arial", 15)).grid(row = 0, column = 1)
 
 
         cosmetic_002_lbl = Label(f2, text = "cosmetic_002", font = ("times new roman", 12, "bold"), fg = "gold", bg = bg_colour).grid(row = 1, column = 0, padx = 30, pady = 26)
 
-        cosmetic_002_ent = Entry(f2, width = 12, font = ("arial", 15)).grid(row = 1, column = 1)
+        cosmetic_002_ent = Entry(f2, textvariable = self.cosmetic_002,width = 12, font = ("arial", 15)).grid(row = 1, column = 1)
 
 
         cosmetic_003_lbl = Label(f2, text = "cosmetic_003", font = ("times new roman", 12, "bold"), fg = "gold", bg = bg_colour).grid(row = 2, column = 0, padx = 30, pady = 26)
 
-        cosmetic_003_ent = Entry(f2, width = 12, font = ("arial", 15)).grid(row = 2, column = 1)
+        cosmetic_003_ent = Entry(f2, textvariable = self.cosmetic_003,width = 12, font = ("arial", 15)).grid(row = 2, column = 1)
 
 
         cosmetic_004_lbl = Label(f2, text = "cosmetic_004", font = ("times new roman", 12, "bold"), fg = "gold", bg = bg_colour).grid(row = 3, column = 0, padx = 30, pady = 26)
 
-        cosmetic_004_ent = Entry(f2, width = 12, font = ("arial", 15)).grid(row = 3, column = 1)
+        cosmetic_004_ent = Entry(f2, textvariable = self.cosmetic_004,width = 12, font = ("arial", 15)).grid(row = 3, column = 1)
         #====================================grocery===========================================
         f3 = LabelFrame(self.root, text = "Grocery", font = ("times new roman", 15, "bold"), fg = "gold", bg = bg_colour, bd = 12, relief = GROOVE)
         f3.place(x = 340, y = 165, height = 350, width = 340)
@@ -88,22 +88,22 @@ class bill_app():
 
         grocery_001_lbl = Label(f3, text = "grocery_001", font = ("times new roman", 12, "bold"), fg = "gold", bg = bg_colour).grid(row = 0, column = 0, padx = 30, pady = 26)
 
-        grocery_001_ent = Entry(f3, width = 12, font = ("arial", 15)).grid(row = 0, column = 1)
+        grocery_001_ent = Entry(f3, textvariable = self.grocery_001,width = 12, font = ("arial", 15)).grid(row = 0, column = 1)
 
 
         grocery_002_lbl = Label(f3, text = "grocery_002", font = ("times new roman", 12, "bold"), fg = "gold", bg = bg_colour).grid(row = 1, column = 0, padx = 30, pady = 26)
 
-        grocery_002_ent = Entry(f3, width = 12, font = ("arial", 15)).grid(row = 1, column = 1)
+        grocery_002_ent = Entry(f3, textvariable = self.grocery_002,width = 12, font = ("arial", 15)).grid(row = 1, column = 1)
 
 
         grocery_003_lbl = Label(f3, text = "grocery_003", font = ("times new roman", 12, "bold"), fg = "gold", bg = bg_colour).grid(row = 2, column = 0, padx = 30, pady = 26)
 
-        grocery_003_ent = Entry(f3, width = 12, font = ("arial", 15)).grid(row = 2, column = 1)
+        grocery_003_ent = Entry(f3, textvariable = self.grocery_003,width = 12, font = ("arial", 15)).grid(row = 2, column = 1)
 
 
         grocery_004_lbl = Label(f3, text = "grocery_004", font = ("times new roman", 12, "bold"), fg = "gold", bg = bg_colour).grid(row = 3, column = 0, padx = 30, pady = 26)
 
-        grocery_004_ent = Entry(f3, width = 12, font = ("arial", 15)).grid(row = 3, column = 1)
+        grocery_004_ent = Entry(f3, textvariable = self.grocery_004,width = 12, font = ("arial", 15)).grid(row = 3, column = 1)
         #=====================================cold drinks========================================
         f4 = LabelFrame(self.root, text = "Cold drinks", font = ("times new roman", 15, "bold"), fg = "gold", bg = bg_colour, bd = 12, relief = GROOVE)
         f4.place(x = 680, y = 165, height = 350, width = 340)
@@ -111,22 +111,22 @@ class bill_app():
 
         cold_drinks_001_lbl = Label(f4, text = "cold_drinks_001", font = ("times new roman", 12, "bold"), fg = "gold", bg = bg_colour).grid(row = 0, column = 0, padx = 30, pady = 26)
 
-        cold_drinks_001_ent = Entry(f4, width = 12, font = ("arial", 15)).grid(row = 0, column = 1)
+        cold_drinks_001_ent = Entry(f4, textvariable = self.cold_drinks_001,width = 12, font = ("arial", 15)).grid(row = 0, column = 1)
 
 
         cold_drinks_002_lbl = Label(f4, text = "cold_drinks_002", font = ("times new roman", 12, "bold"), fg = "gold", bg = bg_colour).grid(row = 1, column = 0, padx = 30, pady = 26)
 
-        cold_drinks_002_ent = Entry(f4, width = 12, font = ("arial", 15)).grid(row = 1, column = 1)
+        cold_drinks_002_ent = Entry(f4, textvariable = self.cold_drinks_002,width = 12, font = ("arial", 15)).grid(row = 1, column = 1)
 
 
         cold_drinks_003_lbl = Label(f4, text = "cold_drinks_004", font = ("times new roman", 12, "bold"), fg = "gold", bg = bg_colour).grid(row = 2, column = 0, padx = 30, pady = 26)
 
-        cold_drinks_003_ent = Entry(f4, width = 12, font = ("arial", 15)).grid(row = 2, column = 1)
+        cold_drinks_003_ent = Entry(f4, textvariable = self.cold_drinks_003,width = 12, font = ("arial", 15)).grid(row = 2, column = 1)
 
 
         cold_drinks_004_lbl = Label(f4, text = "cold_drinks_004", font = ("times new roman", 12, "bold"), fg = "gold", bg = bg_colour).grid(row = 3, column = 0, padx = 30, pady = 26)
 
-        cold_drinks_004_ent = Entry(f4, width = 12, font = ("arial", 15)).grid(row = 3, column = 1)
+        cold_drinks_004_ent = Entry(f4, textvariable = self.cold_drinks_004,width = 12, font = ("arial", 15)).grid(row = 3, column = 1)
 
         #===================bill area=====================================
 
@@ -147,46 +147,70 @@ class bill_app():
         #=========================total=====================================
         total_cosmetic_price_lbl = Label(f7, text = "Total cosmetic price", fg =  "gold", bg = bg_colour, font = ("times new roman", 15, "bold")).grid(row = 0, column = 0, padx = 20, pady = 13)
 
-        total_cosmetic_price_ent = Entry(f7, width = 10, font = ("time new roman", 10, "bold")).grid(row = 0, column = 1)
+        total_cosmetic_price_ent = Entry(f7, textvariable = self.total_cosmetic_price,width = 10, font = ("time new roman", 10, "bold")).grid(row = 0, column = 1)
 
 
         total_grocery_price_lbl = Label(f7, text = "Total grocery price", fg =  "gold", bg = bg_colour, font = ("times new roman", 15, "bold")).grid(row = 1, column = 0, padx = 20, pady = 13)
 
-        total_grocery_price_ent = Entry(f7, width = 10, font = ("time new roman", 10, "bold")).grid(row = 1, column = 1)
+        total_grocery_price_ent = Entry(f7, textvariable = self.total_grocery_price,width = 10, font = ("time new roman", 10, "bold")).grid(row = 1, column = 1)
 
 
         total_cold_drink_price_lbl = Label(f7, text = "Total cold drink price", fg =  "gold", bg = bg_colour, font = ("times new roman", 15, "bold")).grid(row = 2, column = 0, padx = 20, pady = 13)
 
-        total_cold_drink_price_ent = Entry(f7, width = 10, font = ("time new roman", 10, "bold")).grid(row = 2, column = 1)
+        total_cold_drink_price_ent = Entry(f7, textvariable = self.total_cold_drink_price,width = 10, font = ("time new roman", 10, "bold")).grid(row = 2, column = 1)
 
         #============================tax==========================================
 
         total_cosmetic_price_lbl = Label(f7, text = "Total cosmetic price", fg =  "gold", bg = bg_colour, font = ("times new roman", 15, "bold")).grid(row = 0, column = 2, padx = 20, pady = 13)
 
-        total_cosmetic_price_ent = Entry(f7, width = 10, font = ("time new roman", 10, "bold")).grid(row = 0, column = 3)
+        total_cosmetic_price_ent = Entry(f7, textvariable = self.total_cosmetic_tax,width = 10, font = ("time new roman", 10, "bold")).grid(row = 0, column = 3)
 
 
         total_grocery_price_lbl = Label(f7, text = "Total grocery price", fg =  "gold", bg = bg_colour, font = ("times new roman", 15, "bold")).grid(row = 1, column = 2, padx = 20, pady = 13)
 
-        total_grocery_price_ent = Entry(f7, width = 10, font = ("time new roman", 10, "bold")).grid(row = 1, column = 3)
+        total_grocery_price_ent = Entry(f7, textvariable = self.total_grocery_tax,width = 10, font = ("time new roman", 10, "bold")).grid(row = 1, column = 3)
 
 
         total_cold_drink_price_lbl = Label(f7, text = "Total cold drink price", fg =  "gold", bg = bg_colour, font = ("times new roman", 15, "bold")).grid(row = 2, column = 2, padx = 20, pady = 13)
 
-        total_cold_drink_price_ent = Entry(f7, width = 10, font = ("time new roman", 10, "bold")).grid(row = 2, column = 3)
+        total_cold_drink_price_ent = Entry(f7, textvariable = self.total_cold_drink_tax,width = 10, font = ("time new roman", 10, "bold")).grid(row = 2, column = 3)
 
         #==================================buttons=============================
 
         f8 = Frame(f7, bd = 7, relief = GROOVE ,pady = 15)
         f8.place(x = 680, y = 16)
 
-        total_btn = Button(f8, text = "Total", height = 1, width = 7, bd = 12, relief = GROOVE, font = ("times new roman", 18, "bold"), bg = bg_colour).grid(row = 0, column = 0, padx = 8, pady = 10)
+        total_btn = Button(f8, command = self.total, text = "Total", height = 1, width = 7, bd = 12, relief = GROOVE, font = ("times new roman", 18, "bold"), bg = bg_colour).grid(row = 0, column = 0, padx = 8, pady = 10)
 
         generate_bill_btn = Button(f8, text = "Generate bill", height = 1, width = 10, bd = 12, relief = GROOVE, font = ("times new roman", 18, "bold"), bg = bg_colour).grid(row = 0, column = 1, padx = 8, pady = 10)
 
         clear_btn = Button(f8, text = "Clear", height = 1, width = 7, bd = 12, relief = GROOVE, font = ("times new roman", 18, "bold"), bg = bg_colour).grid(row = 0, column = 2, padx = 8, pady = 10)
 
         exit_btn = Button(f8, text = "Exit", height = 1, width = 7, bd = 12, relief = GROOVE, font = ("times new roman", 18, "bold"), bg = bg_colour).grid(row = 0, column = 3, padx = 8, pady = 10)
+
+
+    def total(self):
+        total_cosmetic = str(
+                self.cosmetic_001.get()*10+
+                self.cosmetic_002.get()*10+
+                self.cosmetic_003.get()*10+
+                self.cosmetic_004.get()*10 )
+        self.total_cosmetic_price.set(total_cosmetic)
+
+        total_grocery = str(
+                self.grocery_001.get()*10+
+                self.grocery_002.get()*10+
+                self.grocery_003.get()*10+
+                self.grocery_004.get()*10 )
+        self.total_grocery_price.set(total_grocery)
+
+        total_cold_drink = str(
+                self.cold_drinks_001.get()*10+
+                self.cold_drinks_002.get()*10+
+                self.cold_drinks_003.get()*10+
+                self.cold_drinks_004.get()*10 )
+        self.total_cold_drink_price.set(total_cold_drink)
+
 
 root = Tk()
 obl = bill_app(root)
