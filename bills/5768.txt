@@ -1,0 +1,23 @@
+		welcome
+Bill No.      :5768
+customer Name :kadhud
+Phone No.     :bdssns
+=====================================products		Qnt		price
+=====================================
+cosmetic_001		9		90
+cosmetic_003		8		80
+
+grocery_001		7		70
+grocery_002		3		30
+grocery_004		6		60
+
+cold drinks_002		5		50
+cold drinks_004		4		40
+=====================================
+Total cosmetic Tax			 Rs.37.4
+-------------------------------------
+Total grocery Tax			 Rs.28.8
+-------------------------------------
+Total cold drinks Tax			 Rs.19.8
+=====================================
+Total Bill			 Rs. 596.0

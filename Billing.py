@@ -60,7 +60,7 @@ class bill_app():
         bill_id_ent = Entry(f1, textvariable = self.search_bill,width = 18, font = ("arial", 15)).grid(row = 0, column = 5)
 
 
-        search_btn = Button(f1, text = "search", width = 18, font = ("times new roman", 10, "bold"), fg = "gold", bg = bg_colour, bd = 6, relief = GROOVE).grid(row = 0, column = 8, padx = 15, pady = 5)
+        search_btn = Button(f1, command = self.find_bill,text = "search", width = 18, font = ("times new roman", 10, "bold"), fg = "gold", bg = bg_colour, bd = 6, relief = GROOVE).grid(row = 0, column = 8, padx = 15, pady = 5)
 
         #===================================product labes====================================
         #===================================bath=============================================
@@ -311,7 +311,19 @@ class bill_app():
                 messagebox.showinfo("saved", f"Bill no. :{self.bill_no.get()} saved successfully") 
             else:
                     return                         
-
+    
+    def find_bill(self):
+            present = 0
+            for i in os.listdir("bills/"):
+                    if i.split(".")[0] == self.search_bill.get():
+                        f = open(f"bills/{i}", "r")
+                        re = f.read()
+                        self.txtarea.delete('1.0', END)
+                        self.txtarea.insert(END, re )
+                        f.close()
+                        present = 1
+            if not(present):
+                    messagebox.showerror("Error", "Bill not found")
 
 root = Tk()
 obl = bill_app(root)
