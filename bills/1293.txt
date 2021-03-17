@@ -1,0 +1,26 @@
+		welcome
+Bill No.      :1293
+customer Name :vishal
+Phone No.     :8845754212
+=====================================products		Qnt		price
+=====================================
+cosmetic_001		2		20
+cosmetic_002		6		60
+cosmetic_004		5		50
+
+grocery_001		5		50
+grocery_002		6		60
+grocery_004		5		50
+
+cold drinks_001		56		560
+cold drinks_002		6		60
+cold drinks_003		6		60
+cold drinks_004		5		50
+=====================================
+Total cosmetic Tax			 Rs.28.6
+-------------------------------------
+Total grocery Tax			 Rs.28.8
+-------------------------------------
+Total cold drinks Tax			 Rs.149.6
+=====================================
+Total Bill			 Rs. 597.0

@@ -1,0 +1,25 @@
+		welcome
+Bill No.      :1721
+customer Name :ghcjxkzl
+Phone No.     :56473829
+=====================================products		Qnt		price
+=====================================
+lakme_compact		8		3000
+NewYork_BabyLips		5		1040
+Shampoo		7		5201
+
+PeanutButter		3		675
+MTRVermicelli		9		603
+
+cold drinks_002		4		160
+cold drinks_003		1		38
+cold drinks_004		2		78
+cold drinks_004		5		290
+=====================================
+Total cosmetic Tax			 Rs.2077.02
+-------------------------------------
+Total grocery Tax			 Rs.230.04
+-------------------------------------
+Total cold drinks Tax			 Rs.124.52
+=====================================
+Total Bill			 Rs. 30754.58

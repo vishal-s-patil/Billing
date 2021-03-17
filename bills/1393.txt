@@ -1,0 +1,25 @@
+		welcome
+Bill No.      :1393
+customer Name :vinith
+Phone No.     :6789763245
+=====================================products		Qnt		price
+=====================================
+lakme_compact		1		375
+NewYork_ColossalKajal		2		442
+NiveaMen_cream		1		95
+PimpleClear		1		64
+
+AashirvadAtta		3		1125
+BasmatiRice		1		350
+MaggiPasta		1		22
+
+cold drinks_001		2		230
+cold drinks_003		1		38
+=====================================
+Total cosmetic Tax			 Rs.220.22
+-------------------------------------
+Total grocery Tax			 Rs.269.46
+-------------------------------------
+Total cold drinks Tax			 Rs.58.96
+=====================================
+Total Bill			 Rs. 3551.64
