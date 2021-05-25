@@ -1,3 +1,4 @@
+#start
 from tkinter import *
 import math, random, os
 from tkinter import messagebox
