@@ -1,5 +1,9 @@
 #start
-from tkinter import *
+import sys
+if sys.version_info[0] == 3:
+    from tkinter import *
+else:
+    from Tkinter import *
 import math, random, os
 from tkinter import messagebox
 class bill_app():
